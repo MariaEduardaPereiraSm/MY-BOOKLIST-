@@ -4,13 +4,7 @@ import { useState } from 'react';
 import Times from './componentes/Times/Times';
 
 function App() {
-
-  const [colaboradores, setColaboradores] = useState([])
-  const aoNovoColaboradorAdicionado = (colaborador) => {
-    setColaboradores([...colaboradores, colaborador])
-  }
-
-  const time = [
+  const times = [
     {
       titulo: 'Romance',
       corPrimaria: '#57C278',
@@ -48,21 +42,28 @@ function App() {
     }
   ]
 
+  const [colaboradores, setColaboradores] = useState([])
+  const aoNovoColaboradorAdicionado = (colaborador) => {
+    setColaboradores([...colaboradores, colaborador])
+  }
+
+  
+
   return (
 
     <div className="App">
       <Banner />
-      <Formulario times={time.map(time => time.titulo)} aoColaboradorCadastrado={aoNovoColaboradorAdicionado} />
-      {time.map(time => <Times
-        key={time.titulo}
-        titulo={time.titulo}
-        corPrimaria={time.corPrimaria}
-        corSecundaria={time.corSecundaria}
-        colaboradores={colaboradores.filter(colaborador => colaborador.time === time.titulo)}
+      <Formulario times={times.map(tipo => tipo.titulo)} aoColaboradorCadastrado={aoNovoColaboradorAdicionado} />
+      {times.map(tipo => <Times
+        key={tipo.titulo}
+        titulo={tipo.titulo}
+        corPrimaria={tipo.corPrimaria}
+        corSecundaria={tipo.corSecundaria}
+        colaboradores={colaboradores.filter(colaborador => colaborador.tipo === tipo.titulo)}
       />)}
 
     </div>
   );
 }
-
+ 
 export default App;

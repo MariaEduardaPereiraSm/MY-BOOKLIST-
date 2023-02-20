@@ -9,8 +9,7 @@ const Formulario = (props) => {
     const [titulo, setTitulo] = useState('')
     const [autor, setAutor] = useState('')
     const [imagem, setImagem] = useState('')
-    const [tipo, settipo
-] = useState('')
+    const [tipo, settipo] = useState('')
 
     const salvar = (evento) => {
         evento.preventDefault()
@@ -18,14 +17,13 @@ const Formulario = (props) => {
             titulo,
             autor,
             imagem,
-           tipo
+            tipo
         
         })
         setTitulo('')
         setAutor('')
         setImagem('')
-        settipo
-    ('')
+        settipo('')
     }
 
     return (
@@ -53,15 +51,15 @@ const Formulario = (props) => {
                     placeholder="Digite o endereço da imagem do livro" />
 
                 <ListaSuspensa
-                    valor={tipo
-                }
-                    aoAlterado={valor => settipo
-                    (valor)}
+                    valor={tipo}
+                    aoAlterado={valor => settipo(valor)}
                     obrigatorio={true}
                     label="Tipo"
                     itens={props.times} />
 
                 <Botao>Criar Card</Botao>
+          
+                
             </form>
         </section>
     )

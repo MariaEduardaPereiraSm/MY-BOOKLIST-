@@ -1,5 +1,6 @@
 import Pessoa from '../Pessoa/Pessoa'
 import './Times.css'
+
 const Times = (props) => {
    
     const css = { backgroundColor: props.corSecundaria }
